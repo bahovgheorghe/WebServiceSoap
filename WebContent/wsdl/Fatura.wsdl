@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://gheorghe.alfasoft.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://gheorghe.alfasoft.it" xmlns:intf="http://gheorghe.alfasoft.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://gheorghe.alfasoft.it" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getRagioneSociale">
+    <complexType/>
+   </element>
+   <element name="getRagioneSocialeResponse">
+    <complexType>
+     <sequence>
+      <element name="getRagioneSocialeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRagioneSociale">
+    <complexType>
+     <sequence>
+      <element name="ragioneSociale" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRagioneSocialeResponse">
+    <complexType/>
+   </element>
+   <element name="setCodCliente">
+    <complexType>
+     <sequence>
+      <element name="codCliente" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCodClienteResponse">
+    <complexType/>
+   </element>
+   <element name="getImporto">
+    <complexType/>
+   </element>
+   <element name="getImportoResponse">
+    <complexType>
+     <sequence>
+      <element name="getImportoReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setImporto">
+    <complexType>
+     <sequence>
+      <element name="importo" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setImportoResponse">
+    <complexType/>
+   </element>
+   <element name="getCodCliente">
+    <complexType/>
+   </element>
+   <element name="getCodClienteResponse">
+    <complexType>
+     <sequence>
+      <element name="getCodClienteReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setCodClienteRequest">
+
+      <wsdl:part element="impl:setCodCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCodClienteResponse">
+
+      <wsdl:part element="impl:setCodClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getImportoRequest">
+
+      <wsdl:part element="impl:getImporto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodClienteResponse">
+
+      <wsdl:part element="impl:getCodClienteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setImportoResponse">
+
+      <wsdl:part element="impl:setImportoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setImportoRequest">
+
+      <wsdl:part element="impl:setImporto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getImportoResponse">
+
+      <wsdl:part element="impl:getImportoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRagioneSocialeResponse">
+
+      <wsdl:part element="impl:setRagioneSocialeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRagioneSocialeRequest">
+
+      <wsdl:part element="impl:setRagioneSociale" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodClienteRequest">
+
+      <wsdl:part element="impl:getCodCliente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRagioneSocialeResponse">
+
+      <wsdl:part element="impl:getRagioneSocialeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRagioneSocialeRequest">
+
+      <wsdl:part element="impl:getRagioneSociale" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Fatura">
+
+      <wsdl:operation name="getRagioneSociale">
+
+         <wsdl:input message="impl:getRagioneSocialeRequest" name="getRagioneSocialeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRagioneSocialeResponse" name="getRagioneSocialeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRagioneSociale">
+
+         <wsdl:input message="impl:setRagioneSocialeRequest" name="setRagioneSocialeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRagioneSocialeResponse" name="setRagioneSocialeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodCliente">
+
+         <wsdl:input message="impl:setCodClienteRequest" name="setCodClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCodClienteResponse" name="setCodClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getImporto">
+
+         <wsdl:input message="impl:getImportoRequest" name="getImportoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getImportoResponse" name="getImportoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setImporto">
+
+         <wsdl:input message="impl:setImportoRequest" name="setImportoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setImportoResponse" name="setImportoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodCliente">
+
+         <wsdl:input message="impl:getCodClienteRequest" name="getCodClienteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCodClienteResponse" name="getCodClienteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FaturaSoapBinding" type="impl:Fatura">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getRagioneSociale">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRagioneSocialeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRagioneSocialeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRagioneSociale">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRagioneSocialeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRagioneSocialeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCodClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCodClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getImporto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getImportoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getImportoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setImporto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setImportoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setImportoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodCliente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCodClienteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCodClienteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FaturaService">
+
+      <wsdl:port binding="impl:FaturaSoapBinding" name="Fatura">
+
+         <wsdlsoap:address location="http://localhost:5050/SecondoEsempioSOAP/services/Fatura"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

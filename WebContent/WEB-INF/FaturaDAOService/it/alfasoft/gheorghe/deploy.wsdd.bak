@@ -1,0 +1,40 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FaturaDAOService WSDL service -->
+
+  <service name="FaturaDAO" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://gheorghe.alfasoft.it"/>
+      <parameter name="wsdlServiceElement" value="FaturaDAOService"/>
+      <parameter name="schemaQualified" value="http://xml.apache.org/xml-soap,http://gheorghe.alfasoft.it"/>
+      <parameter name="wsdlServicePort" value="FaturaDAO"/>
+      <parameter name="className" value="it.alfasoft.gheorghe.FaturaDAOSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="FaturaDAO"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getFaturaConCodice" qname="operNS:getFaturaConCodice" xmlns:operNS="http://gheorghe.alfasoft.it" returnQName="retNS:getFaturaConCodiceReturn" xmlns:retNS="http://gheorghe.alfasoft.it" returnType="rtns:Fatura" xmlns:rtns="http://gheorghe.alfasoft.it" soapAction="" >
+        <parameter qname="pns:codCliente" xmlns:pns="http://gheorghe.alfasoft.it" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getTutteFature" qname="operNS:getTutteFature" xmlns:operNS="http://gheorghe.alfasoft.it" returnQName="retNS:getTutteFatureReturn" xmlns:retNS="http://gheorghe.alfasoft.it" returnType="rtns:Fatura" xmlns:rtns="http://gheorghe.alfasoft.it" soapAction="" >
+        <parameter qname="pns:fature" xmlns:pns="http://gheorghe.alfasoft.it" type="tns:Map" xmlns:tns="http://xml.apache.org/xml-soap"/>
+      </operation>
+      <parameter name="allowedMethods" value="getTutteFature getFaturaConCodice"/>
+
+      <typeMapping
+        xmlns:ns="http://gheorghe.alfasoft.it"
+        qname="ns:Fatura"
+        type="java:it.alfasoft.gheorghe.Fatura"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

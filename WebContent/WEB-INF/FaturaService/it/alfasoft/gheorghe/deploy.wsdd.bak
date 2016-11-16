@@ -1,0 +1,41 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FaturaService WSDL service -->
+
+  <service name="Fatura" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://gheorghe.alfasoft.it"/>
+      <parameter name="wsdlServiceElement" value="FaturaService"/>
+      <parameter name="schemaQualified" value="http://gheorghe.alfasoft.it"/>
+      <parameter name="wsdlServicePort" value="Fatura"/>
+      <parameter name="className" value="it.alfasoft.gheorghe.FaturaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Fatura"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getRagioneSociale" qname="operNS:getRagioneSociale" xmlns:operNS="http://gheorghe.alfasoft.it" returnQName="retNS:getRagioneSocialeReturn" xmlns:retNS="http://gheorghe.alfasoft.it" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setRagioneSociale" qname="operNS:setRagioneSociale" xmlns:operNS="http://gheorghe.alfasoft.it" soapAction="" >
+        <parameter qname="pns:ragioneSociale" xmlns:pns="http://gheorghe.alfasoft.it" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setCodCliente" qname="operNS:setCodCliente" xmlns:operNS="http://gheorghe.alfasoft.it" soapAction="" >
+        <parameter qname="pns:codCliente" xmlns:pns="http://gheorghe.alfasoft.it" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getImporto" qname="operNS:getImporto" xmlns:operNS="http://gheorghe.alfasoft.it" returnQName="retNS:getImportoReturn" xmlns:retNS="http://gheorghe.alfasoft.it" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setImporto" qname="operNS:setImporto" xmlns:operNS="http://gheorghe.alfasoft.it" soapAction="" >
+        <parameter qname="pns:importo" xmlns:pns="http://gheorghe.alfasoft.it" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getCodCliente" qname="operNS:getCodCliente" xmlns:operNS="http://gheorghe.alfasoft.it" returnQName="retNS:getCodClienteReturn" xmlns:retNS="http://gheorghe.alfasoft.it" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getRagioneSociale setImporto setCodCliente getImporto getCodCliente setRagioneSociale"/>
+
+  </service>
+</deployment>
